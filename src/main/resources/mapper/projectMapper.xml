@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.projectDao">
+    <!--查询所有公益活动-->
+    <select id="selectAll" resultType="com.example.demo.entity.project">
+        select * from project
+    </select>
+    <!--通过id查找公益活动-->
+    <select id="selectbyid" parameterType="int" resultType="com.example.demo.entity.project">
+        select * from project where projectid = #{id}
+    </select>
+</mapper>
+

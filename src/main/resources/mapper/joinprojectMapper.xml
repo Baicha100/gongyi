@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.joinprojectDao">
+    <!--查询所有活动参加表-->
+    <select id="selectAll" resultType="com.example.demo.entity.joinproject">
+        select * from joinproject
+    </select>
+    <!--通过openid查找活动参加表-->
+    <select id="selectbyid" parameterType="String" resultType="com.example.demo.entity.joinproject">
+        select * from joinproject where studentid = #{studentid}
+    </select>
+
+
+</mapper>

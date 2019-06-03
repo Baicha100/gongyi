@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.crowdDao">
+    <!--查询所有众筹活动-->
+    <select id="selectAll" resultType="com.example.demo.entity.crowd">
+        select * from crowd
+    </select>
+    <!--通过id查找众筹活动-->
+    <select id="selectbyid" parameterType="int" resultType="com.example.demo.entity.crowd">
+        select * from crowd where crowdid = #{id}
+    </select>
+
+    <!--统计众筹活动的条数-->
+    <select id="selectcount" resultType="int">
+        select count(*) from crowd
+    </select>
+
+</mapper>

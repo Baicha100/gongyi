@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.demo.dao.associationDao">
+    <!--查询所有社团-->
+    <select id="selectAll" resultType="com.example.demo.entity.association">
+        select * from association
+    </select>
+    <!--通过id查找社团-->
+    <select id="selectbyid" parameterType="int" resultType="com.example.demo.entity.association">
+        select * from association where associationid = #{associationid}
+    </select>
+
+    <!--通过账号密码查找社团-->
+    <select id="login"   resultType="com.example.demo.entity.association">
+    select * from association where associationnumber=#{associationnumber} and associationpassword=#{associationpassword}
+   </select>
+
+</mapper>
+
